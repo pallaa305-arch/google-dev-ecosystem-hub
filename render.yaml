@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: google-dev-ecosystem-hub
+    env: node
+    buildCommand: npm run build
+    startCommand: npm run start
+    repo: https://github.com/pallaa305-arch/google-dev-ecosystem-hub
