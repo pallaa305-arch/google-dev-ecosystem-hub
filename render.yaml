@@ -2,6 +2,12 @@ services:
   - type: web
     name: google-dev-ecosystem-hub
     env: node
-    buildCommand: npm run build
+    region: oregon
+    buildCommand: npm install && npm run build
     startCommand: npm run start
     repo: https://github.com/pallaa305-arch/google-dev-ecosystem-hub
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
