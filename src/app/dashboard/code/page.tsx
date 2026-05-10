@@ -26,17 +26,17 @@ export default function CodePage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">💻</span> Code Agent
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Connect GitHub repos and automate coding tasks.</p>
-          </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
-            + Connect Repository
-          </button>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">💻</span> Code Agent
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Connect GitHub repos and automate coding tasks.</p>
         </div>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 w-fit">
+          + Connect Repository
+        </button>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">

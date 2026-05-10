@@ -42,19 +42,19 @@ export default function TemplatesPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-end">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Templates Marketplace</h1>
-            <p className="mt-1 text-gray-500">Start your next project faster with pre-built blueprints.</p>
-          </div>
-          <input
-            type="search"
-            placeholder="Search templates..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
+      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Templates Marketplace</h1>
+          <p className="mt-1 text-sm sm:text-base text-gray-500">Start your next project faster with pre-built blueprints.</p>
         </div>
+        <input
+          type="search"
+          placeholder="Search templates..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 w-full sm:w-auto"
+        />
+      </div>
 
         <div className="flex gap-2 overflow-x-auto pb-2 border-b">
           {filters.map((f) => (

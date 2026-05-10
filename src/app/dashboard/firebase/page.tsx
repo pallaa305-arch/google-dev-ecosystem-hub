@@ -22,27 +22,27 @@ export default function FirebasePage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">🔥</span> Firebase Studio
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Set up auth, database, hosting, and deployment.</p>
-          </div>
-          <div className="flex gap-2">
-            <button 
-              onClick={() => alert("This would open Firebase console in a new tab.")}
-              className="bg-white text-gray-700 border px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50"
-            >
-              Open Firebase Console
-            </button>
-            <button className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600">
-              + Add Firebase Project
-            </button>
-          </div>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">🔥</span> Firebase Studio
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Set up auth, database, hosting, and deployment.</p>
         </div>
+        <div className="flex gap-2 flex-wrap">
+          <button
+            onClick={() => alert("This would open Firebase console in a new tab.")}
+            className="bg-white text-gray-700 border px-3 sm:px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50"
+          >
+            Open Console
+          </button>
+          <button className="bg-orange-500 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600">
+            + Add Project
+          </button>
+        </div>
+      </div>
 
-        <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-100 rounded-lg p-4 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-100 rounded-lg p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-xl">🔥</div>
             <div>

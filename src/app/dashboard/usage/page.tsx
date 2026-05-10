@@ -18,17 +18,17 @@ export default function UsagePage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">📊</span> Usage & Quotas
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Monitor your API usage and plan limits.</p>
-          </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
-            Upgrade Plan
-          </button>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">📊</span> Usage & Quotas
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Monitor your API usage and plan limits.</p>
         </div>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 w-fit">
+          Upgrade Plan
+        </button>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-4">
@@ -55,33 +55,33 @@ export default function UsagePage() {
               </div>
             </div>
 
-            <div className="bg-white border rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-4">Usage History</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gray-50 border-b">
-                    <tr>
-                      <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">Date</th>
-                      <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">✨ Gemini</th>
-                      <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">🔍 Research</th>
-                      <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">🎨 Designs</th>
-                      <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">⚙️ Workflows</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y">
-                    {history.map((row) => (
-                      <tr key={row.date}>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">{row.date}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">{row.gemini}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">{row.research}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">{row.designs}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">{row.workflows}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+      <div className="bg-white border rounded-lg p-4">
+        <h3 className="font-medium text-gray-900 mb-4">Usage History</h3>
+        <div className="overflow-x-auto -mx-4 px-4">
+          <table className="w-full min-w-[500px]">
+            <thead className="bg-gray-50 border-b">
+              <tr>
+                <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">Date</th>
+                <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">✨ Gemini</th>
+                <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">🔍 Research</th>
+                <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">🎨 Designs</th>
+                <th className="text-left px-4 py-2 text-xs font-medium text-gray-500 uppercase">⚙️ Workflows</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y">
+              {history.map((row) => (
+                <tr key={row.date}>
+                  <td className="px-4 py-3 text-sm font-medium text-gray-900">{row.date}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{row.gemini}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{row.research}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{row.designs}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{row.workflows}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
           </div>
 
           <div className="space-y-4">

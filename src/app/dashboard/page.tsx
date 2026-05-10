@@ -32,18 +32,18 @@ export default function DashboardPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Welcome back! 👋</h1>
-            <p className="text-gray-500">Here&apos;s what&apos;s happening with your projects today.</p>
-          </div>
-          <Link 
-            href="/dashboard/projects/new"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700"
-          >
-            + New Project
-          </Link>
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Welcome back! 👋</h1>
+          <p className="text-sm sm:text-base text-gray-500">Here&apos;s what&apos;s happening with your projects today.</p>
         </div>
+        <Link
+          href="/dashboard/projects/new"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 w-fit"
+        >
+          + New Project
+        </Link>
+      </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-lg border bg-white p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" onClick={() => router.push("/dashboard/projects")}>

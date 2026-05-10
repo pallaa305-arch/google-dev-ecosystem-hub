@@ -40,16 +40,17 @@ export default function SettingsPage() {
           <p className="mt-1 text-gray-500">Manage your account, API keys, and preferences.</p>
         </div>
 
-        <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-4">
-            <div className="border-r bg-gray-50/50 p-4 space-y-1">
+      <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4">
+          <div className="border-b md:border-b-0 md:border-r bg-gray-50/50 p-2 md:p-4">
+            <div className="flex md:flex-col gap-1 overflow-x-auto md:overflow-x-visible scrollbar-hide">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2 ${
-                    activeTab === tab.id 
-                      ? "bg-blue-50 text-blue-700" 
+                  className={`whitespace-nowrap text-left px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2 ${
+                    activeTab === tab.id
+                      ? "bg-blue-50 text-blue-700"
                       : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -58,6 +59,7 @@ export default function SettingsPage() {
                 </button>
               ))}
             </div>
+          </div>
 
             <div className="md:col-span-3 p-6 space-y-6">
               {activeTab === "integrations" && (

@@ -41,26 +41,26 @@ export default function AIBuilderPage() {
   return (
     <DashboardLayout>
       <div className="flex flex-col h-[calc(100vh-8rem)]">
-        <div className="border-b pb-4 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">✨</span> AI Builder
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Chat with Gemini, test prompts, and generate code.</p>
-          </div>
-          <div className="flex items-center gap-2 bg-white border rounded-lg px-3 py-2">
-            <span className="text-sm text-gray-600">Model:</span>
-            <select 
-              value={selectedModel} 
-              onChange={(e) => setSelectedModel(e.target.value)}
-              className="text-sm font-medium text-blue-600 bg-transparent border-none focus:outline-none"
-            >
-              {models.map(m => <option key={m.name} value={m.name}>{m.name}</option>)}
-            </select>
-          </div>
+      <div className="border-b pb-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">✨</span> AI Builder
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Chat with Gemini, test prompts, and generate code.</p>
         </div>
+        <div className="flex items-center gap-2 bg-white border rounded-lg px-3 py-2 w-fit">
+          <span className="text-sm text-gray-600">Model:</span>
+          <select
+            value={selectedModel}
+            onChange={(e) => setSelectedModel(e.target.value)}
+            className="text-sm font-medium text-blue-600 bg-transparent border-none focus:outline-none"
+          >
+            {models.map(m => <option key={m.name} value={m.name}>{m.name}</option>)}
+          </select>
+        </div>
+      </div>
 
-        <div className="flex-1 flex mt-4 gap-4 overflow-hidden">
+        <div className="flex-1 flex mt-4 gap-4 overflow-hidden flex-col md:flex-row">
           <div className="w-64 border-r pr-4 hidden md:block overflow-y-auto">
             <button className="w-full bg-blue-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-blue-700 mb-4">
               + New Chat

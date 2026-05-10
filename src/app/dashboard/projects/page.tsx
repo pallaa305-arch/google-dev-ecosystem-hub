@@ -27,43 +27,43 @@ export default function ProjectsPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Projects</h1>
-            <p className="text-gray-500">Manage all your applications and workspaces.</p>
-          </div>
-          <Link
-            href="/dashboard/projects/new"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
-          >
-            + Create New Project
-          </Link>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Projects</h1>
+          <p className="text-sm sm:text-base text-gray-500">Manage all your applications and workspaces.</p>
         </div>
+        <Link
+          href="/dashboard/projects/new"
+          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 w-fit"
+        >
+          + Create New Project
+        </Link>
+      </div>
 
-        <div className="flex gap-4 items-center border-b pb-4">
-          <input
-            type="search"
-            placeholder="Search projects..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="border rounded-lg px-3 py-2 text-sm"
-          />
-          <div className="flex gap-2">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f.toLowerCase())}
-                className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  filter === f.toLowerCase() 
-                    ? "bg-gray-900 text-white" 
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+      <div className="flex flex-col gap-3 border-b pb-4">
+        <input
+          type="search"
+          placeholder="Search projects..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="border rounded-lg px-3 py-2 text-sm w-full"
+        />
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          {filters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f.toLowerCase())}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap ${
+                filter === f.toLowerCase()
+                  ? "bg-gray-900 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
         </div>
+      </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (

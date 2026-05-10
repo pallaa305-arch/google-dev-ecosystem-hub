@@ -30,14 +30,14 @@ export default function ResearchPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <span className="text-2xl">🔍</span> Research Workspace
-          </h1>
-          <p className="text-sm text-gray-500 mt-1">Upload sources, ask grounded questions, and generate insights.</p>
-        </div>
+      <div>
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+          <span className="text-2xl">🔍</span> Research Workspace
+        </h1>
+        <p className="text-sm text-gray-500 mt-1">Upload sources, ask grounded questions, and generate insights.</p>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           <div className="lg:col-span-2 space-y-6">
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:bg-gray-50 cursor-pointer transition-colors">
               <div className="text-4xl mb-2">📁</div>

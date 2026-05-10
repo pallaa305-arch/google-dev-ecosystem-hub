@@ -28,20 +28,20 @@ export default function WorkflowsPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">⚙️</span> Workflow Lab
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Build no-code automations and mini-apps.</p>
-          </div>
-          <button 
-            onClick={() => alert("This would open the workflow builder.")}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700"
-          >
-            + Create Workflow
-          </button>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">⚙️</span> Workflow Lab
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Build no-code automations and mini-apps.</p>
         </div>
+        <button
+          onClick={() => alert("This would open the workflow builder.")}
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 w-fit"
+        >
+          + Create Workflow
+        </button>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">

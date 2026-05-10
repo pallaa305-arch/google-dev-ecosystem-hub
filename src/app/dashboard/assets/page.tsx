@@ -19,17 +19,17 @@ export default function AssetsPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-2xl">📦</span> Assets
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Manage all your project files, images, and documents.</p>
-          </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
-            + Upload Files
-          </button>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="text-2xl">📦</span> Assets
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Manage all your project files, images, and documents.</p>
         </div>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 w-fit">
+          + Upload Files
+        </button>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="space-y-4">
@@ -68,49 +68,67 @@ export default function AssetsPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 space-y-4">
-            <div className="flex gap-2">
-              <input
-                type="search"
-                placeholder="Search assets..."
-                className="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <select className="border rounded-lg px-3 py-2 text-sm">
-                <option>All Projects</option>
-                <option>SaaS Dashboard</option>
-                <option>Marketing Site</option>
-              </select>
-            </div>
+      <div className="lg:col-span-3 space-y-4">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="search"
+            placeholder="Search assets..."
+            className="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <select className="border rounded-lg px-3 py-2 text-sm w-full sm:w-auto">
+            <option>All Projects</option>
+            <option>SaaS Dashboard</option>
+            <option>Marketing Site</option>
+          </select>
+        </div>
 
-            <div className="bg-white border rounded-lg overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-gray-50 border-b">
-                  <tr>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Name</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Type</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Size</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Project</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  {assets.map((asset) => (
-                    <tr key={asset.name} className="hover:bg-gray-50">
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg">{asset.type === 'image' ? '🖼️' : asset.type === 'document' ? '📄' : '🏷️'}</span>
-                          <span className="text-sm font-medium text-gray-900">{asset.name}</span>
-                        </div>
-                      </td>
-                      <td className="px-4 py-3 text-sm text-gray-500 capitalize">{asset.type}</td>
-                      <td className="px-4 py-3 text-sm text-gray-500">{asset.size}</td>
-                      <td className="px-4 py-3 text-sm text-gray-500">{asset.project}</td>
-                      <td className="px-4 py-3 text-sm text-gray-500">{asset.date}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        {/* Mobile: Cards, Desktop: Table */}
+        <div className="sm:hidden space-y-3">
+          {assets.map((asset) => (
+            <div key={asset.name} className="bg-white border rounded-lg p-3 hover:bg-gray-50">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">{asset.type === 'image' ? '🖼️' : asset.type === 'document' ? '📄' : '🏷️'}</span>
+                <span className="text-sm font-medium text-gray-900 truncate">{asset.name}</span>
+              </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                <span>{asset.type}</span>
+                <span>{asset.size}</span>
+                <span>{asset.project}</span>
+                <span>{asset.date}</span>
+              </div>
             </div>
+          ))}
+        </div>
+
+        <div className="hidden sm:block bg-white border rounded-lg overflow-hidden overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50 border-b">
+              <tr>
+                <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Name</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Type</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Size</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Project</th>
+                <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y">
+              {assets.map((asset) => (
+                <tr key={asset.name} className="hover:bg-gray-50">
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{asset.type === 'image' ? '🖼️' : asset.type === 'document' ? '📄' : '🏷️'}</span>
+                      <span className="text-sm font-medium text-gray-900">{asset.name}</span>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-500 capitalize">{asset.type}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{asset.size}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{asset.project}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{asset.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:bg-gray-50 cursor-pointer">
               <div className="text-4xl mb-2">📁</div>
